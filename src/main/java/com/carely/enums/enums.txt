@@ -1,0 +1,127 @@
+package com.carely.enums;
+
+/**
+ * Rôles des utilisateurs dans le système
+ */
+public enum Role {
+    INFIRMIER,
+    MEDECIN_GENERALISTE,
+    MEDECIN_SPECIALISTE
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Statut d'une consultation
+ */
+public enum StatutConsultation {
+    EN_COURS,                      // Consultation en cours
+    EN_ATTENTE_AVIS_SPECIALISTE,  // En attente de l'avis du spécialiste
+    TERMINEE                       // Consultation terminée
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Statut d'une demande d'expertise
+ */
+public enum StatutExpertise {
+    EN_ATTENTE,    // En attente de réponse du spécialiste
+    EN_COURS,      // Le spécialiste est en train de traiter
+    TERMINEE       // Expertise terminée
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Niveau de priorité d'une demande d'expertise
+ */
+public enum Priorite {
+    URGENTE,
+    NORMALE,
+    NON_URGENTE
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Spécialités médicales
+ */
+public enum Specialite {
+    CARDIOLOGIE("Cardiologue"),
+    PNEUMOLOGIE("Pneumologue"),
+    DERMATOLOGIE("Dermatologue"),
+    NEUROLOGIE("Neurologue"),
+    ENDOCRINOLOGIE("Endocrinologue"),
+    OPHTALMOLOGIE("Ophtalmologue"),
+    ORL("ORL"),
+    PEDIATRIE("Pédiatre"),
+    GYNECOLOGIE("Gynécologue"),
+    PSYCHIATRIE("Psychiatre"),
+    RADIOLOGIE("Radiologue");
+
+    private final String libelle;
+
+    Specialite(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Types d'actes techniques médicaux avec leurs coûts
+ */
+public enum TypeActeTechnique {
+    RADIOGRAPHIE("Radiographie", 500.0),
+    ECHOGRAPHIE("Échographie", 700.0),
+    IRM("IRM", 3000.0),
+    ELECTROCARDIOGRAMME("Électrocardiogramme", 150.0),
+    LASER_DERMATOLOGIQUE("Laser (Dermatologique)", 500.0),
+    FOND_OEIL("Fond d'œil", 250.0),
+    ANALYSE_SANG("Analyse de sang", 180.0),
+    ANALYSE_URINE("Analyse d'urine", 120.0);
+
+    private final String libelle;
+    private final double prix;
+
+    TypeActeTechnique(String libelle, double prix) {
+        this.libelle = libelle;
+        this.prix = prix;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public double getPrix() {
+        return prix;
+    }
+}
+
+// ============================================
+
+package com.carely.enums;
+
+/**
+ * Statut d'un patient dans la file d'attente
+ */
+public enum StatutPatient {
+    EN_ATTENTE,        // En attente de consultation
+    EN_CONSULTATION,   // En cours de consultation
+    TERMINE            // Consultation terminée
+}
